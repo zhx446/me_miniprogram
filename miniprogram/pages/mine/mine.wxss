@@ -1,1 +1,39 @@
 /* pages/mine/mine.wxss */
+.mine-container {
+   display: flex;
+   flex-direction: column;
+}
+
+.mine-container .login {
+   background-color: #fff;
+}
+
+.mine-container .mine-info {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   background-color: #fff;
+}
+
+.mine-container .mine-info .info {
+   text-align: center;
+}
+
+.mine-container .mine-info .info view:first-child {
+   color: #B4B4B4;
+}
+
+.mine-container .mine-info .info view:last-child {
+   color: #22933A;
+   font-size: 45rpx;
+}
+
+.mine-container .mine-info .hr {
+   border: 1rpx solid #ccc;
+   height: 60rpx;
+}
+
+.mine-container .item-info {
+   margin-top: 20rpx;
+}

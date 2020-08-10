@@ -1,2 +1,17 @@
 <!--pages/food/food.wxml-->
-<text>pages/food/food.wxml</text>
+<view class="food-container">
+	<view class="sidebar">
+		<van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+			<van-sidebar-item title="鲜果茶缘" />
+			<van-sidebar-item title="醇香奶茶" />
+			<van-sidebar-item title="原沏茗作" />
+			<van-sidebar-item title="现磨咖啡" />
+			<van-sidebar-item title="牛奶手作茶" />
+			<van-sidebar-item title="活力益菌多" />
+			<van-sidebar-item title="益小料" />
+		</van-sidebar>
+	</view>
+	<view class="add-food">
+		<van-card num="2" price="2.00" desc="描述信息" title="商品标题" thumb="{{ imageURL }}" />
+	</view>
+</view>

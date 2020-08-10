@@ -5,9 +5,50 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        cell:[
+            {
+                title:'会员等级',
+                icon:'gem-o'
+            },
+            {
+                title:'福利社',
+                icon:'bill-o'
+            },
+            {
+                title:'会员码',
+                icon:'qr'
+            },
+            {
+                title:'积分商城',
+                icon:'shop-o'
+            },
+            {
+                title:'我的订单',
+                icon:'orders-o'
+            },
+            {
+                title:'收货地址',
+                icon:'location-o'
+            },
+            {
+                title:'兑换码',
+                icon:'coupon-o'
+            },
+            {
+                title:'集点送',
+                icon:'point-gift-o'
+            },
+            {
+                title:'微商城',
+                icon:'bag-o'
+            },
+            {
+                title:'邀请有礼',
+                icon:'friends-o'
+            }
+            
+        ]
     },
-
     /**
      * 生命周期函数--监听页面加载
      */

@@ -1,2 +1,4 @@
 <!--pages/takefood/takefood.wxml-->
-<text>pages/takefood/takefood.wxml</text>
+<van-empty description="没有可取餐的订单，快去下单吧~">
+	<van-button type="primary" color="#118D2B" size="large">去点单</van-button>
+</van-empty>

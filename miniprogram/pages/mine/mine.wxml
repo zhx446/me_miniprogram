@@ -1,2 +1,25 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<view class="mine-container">
+	<view class="login">登录</view>
+	<view class="mine-info">
+		<view class="info">
+			<view>积分</view>
+			<view>0</view>
+		</view>
+		<view class="hr"></view>
+		<view class="info">
+			<view>储值金</view>
+			<view>0</view>
+		</view>
+		<view class="hr"></view>
+		<view class="info">
+			<view>优惠劵</view>
+			<view>0</view>
+		</view>
+	</view>
+	<view class="item-info">
+		<block wx:for="{{cell}}">
+			<van-cell color="red" title="{{item.title}}" icon="{{item.icon}}" is-link />
+		</block>
+	</view>
+</view>

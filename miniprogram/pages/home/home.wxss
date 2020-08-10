@@ -10,3 +10,59 @@
     border-radius: 20rpx;
     box-shadow: 5rpx 5rpx 5rpx #DCDAD9;
 }
+
+.home-container .order-meal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 92%;
+    height: 200rpx;
+    margin: 0rpx 30rpx;
+    box-shadow: 1rpx 1rpx 5rpx 5rpx rgb(235, 234, 234);
+    border-radius: 20rpx;
+}
+
+.home-container .order-meal .hr {
+    height: 150rpx;
+    border: 1rpx solid #DFDFE0;
+}
+
+.home-container .order-meal .left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.home-container .order-meal .left text:last-child{
+    font-size: 25rpx;
+}
+
+.home-container .order-meal .right {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.home-container .order-meal .right text:last-child{
+    font-size: 25rpx;
+}
+
+.home-container .news .title {
+    font-size: 35rpx;
+    font-weight: 540;
+    margin: 30rpx;
+}
+
+.home-container .news image {
+    width: 92%;
+    margin: 10rpx 30rpx;
+}

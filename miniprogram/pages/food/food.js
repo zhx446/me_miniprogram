@@ -5,7 +5,9 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        activeKey: 0,
+        mainActiveIndex: 0,
+        activeId: null,
     },
 
     /**
@@ -13,6 +15,12 @@ Page({
      */
     onLoad: function (options) {
 
+    },
+    onChange(event) {
+        Notify({
+            type: 'primary',
+            message: event.detail
+        });
     },
 
     /**

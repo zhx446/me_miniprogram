@@ -1,1 +1,9 @@
 /* pages/food/food.wxss */
+.food-container {
+   display: flex;
+   flex-direction: row;
+}
+
+/* .food-container .add-foot {
+
+} */

@@ -6,9 +6,12 @@
     <view class="order-meal">
         <view class="left">
             <text>自助点单</text>
+            <text>免排队安全下单</text>
         </view>
+        <view class="hr"></view>
         <view class="right">
             <text>优惠券</text>
+            <text>优惠码兑劵</text>
         </view>
     </view>
     <view class="news">
