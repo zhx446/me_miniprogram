@@ -1,0 +1,12 @@
+/* pages/home/home.wxss */
+.home-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-container .banner image{
+    width: 92%;
+    margin: 30rpx;
+    border-radius: 20rpx;
+    box-shadow: 5rpx 5rpx 5rpx #DCDAD9;
+}

@@ -1,0 +1,20 @@
+<!--pages/home/home.wxml-->
+<view class="home-container">
+    <view class="banner">
+        <image src="../images/banner.jpg"></image>
+    </view>
+    <view class="order-meal">
+        <view class="left">
+            <text>自助点单</text>
+        </view>
+        <view class="right">
+            <text>优惠券</text>
+        </view>
+    </view>
+    <view class="news">
+        <view class="title">最新资讯</view>
+        <image src="../images/banner.jpg"></image>
+        <image src="../images/banner.jpg"></image>
+    </view>
+</view>
+
