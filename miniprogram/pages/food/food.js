@@ -1,4 +1,5 @@
 // pages/food/food.js
+
 Page({
 
     /**
@@ -8,6 +9,8 @@ Page({
         activeKey: 0,
         mainActiveIndex: 0,
         activeId: null,
+        imageURL:'/pages/images/milktea.png',
+        sidebarItem:['鲜果茶缘','醇香奶茶','原沏茗作','现磨咖啡','牛奶手作茶','活力益菌多','益小料']
     },
 
     /**
@@ -17,10 +20,7 @@ Page({
 
     },
     onChange(event) {
-        Notify({
-            type: 'primary',
-            message: event.detail
-        });
+        console.log(event)
     },
 
     /**

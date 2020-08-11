@@ -1,21 +1,18 @@
 <!--pages/mine/mine.wxml-->
 <view class="mine-container">
-	<view class="login">登录</view>
+	<view class="login">
+		<van-button type="primary" size="normal">授权登录</van-button>
+	</view>
+	<view class="login-info">
+		
+	</view>
 	<view class="mine-info">
-		<view class="info">
-			<view>积分</view>
-			<view>0</view>
-		</view>
-		<view class="hr"></view>
-		<view class="info">
-			<view>储值金</view>
-			<view>0</view>
-		</view>
-		<view class="hr"></view>
-		<view class="info">
-			<view>优惠劵</view>
-			<view>0</view>
-		</view>
+		<block wx:for="{{info}}">
+			<view class="info">
+				<view>{{item}}</view>
+				<view>0</view>
+			</view>
+		</block>
 	</view>
 	<view class="item-info">
 		<block wx:for="{{cell}}">

@@ -4,6 +4,26 @@
    flex-direction: row;
 }
 
-/* .food-container .add-foot {
+.food-container .sidebar {
+   width: 20%;
+}
 
-} */
+.food-container .add-food {
+   width: 80%;
+}
+
+.food-container .add-food .food-price{
+   color: #F77A1F;
+}
+
+.food-container .add-food .food-price .price-num{
+   font-size: 35rpx;
+}
+
+.food-container .add-food .food-title{
+   color: #343434;
+   font-size: 30rpx;
+   font-weight: bold;
+}
+
+
