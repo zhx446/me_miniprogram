@@ -60,23 +60,23 @@ Page({
     onLoad: function (options) {
         this.setLogin()
     },
-    setLogin:function(e) {
-        wx.login({
-            success (res) {
-              if (res.code) {
-                //发起网络请求
-                wx.request({
-                  url: 'GET https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
-                  data: {
-                    code: res.code
-                  }
-                })
-              } else {
-                console.log('登录失败！' + res.errMsg)
-              }
-            }
-          })
-    },
+    // setLogin:function(e) {
+    //     wx.login({
+    //         success (res) {
+    //           if (res.code) {
+    //             //发起网络请求
+    //             wx.request({
+    //               url: 'GET https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
+    //               data: {
+    //                 code: res.code
+    //               }
+    //             })
+    //           } else {
+    //             console.log('登录失败！' + res.errMsg)
+    //           }
+    //         }
+    //       })
+    // },
     userLogin: function (e) {
         if (e.detail.userInfo) {
             db.collection('users').add({

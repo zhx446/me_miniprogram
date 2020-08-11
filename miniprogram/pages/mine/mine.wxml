@@ -1,6 +1,8 @@
 <!--pages/mine/mine.wxml-->
 <view class="mine-container">
 	<view wx:if="{{loginIs}}" class="login-info">
+		<!-- <open-data type="userAvatarUrl"></open-data>
+		<open-data type="userNickName"></open-data> -->
 		<image src="{{userInfo.avatarUrl}}"></image>
 		<text>{{userInfo.nickName}}</text>
 	</view>
