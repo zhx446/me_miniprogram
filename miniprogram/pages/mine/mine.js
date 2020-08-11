@@ -10,7 +10,8 @@ Page({
     data: {
         loginIs: false,
         info: ['积分', '储值金', '优惠券'],
-        userInfo: {},
+        avatarUrl: '',
+        nickName:'',
         cell: [{
                 title: '会员等级',
                 icon: 'gem-o'
@@ -58,25 +59,28 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setLogin()
+        this.getStorage()
     },
-    // setLogin:function(e) {
-    //     wx.login({
-    //         success (res) {
-    //           if (res.code) {
-    //             //发起网络请求
-    //             wx.request({
-    //               url: 'GET https://api.weixin.qq.com/sns/jscode2session?appid=APPID&secret=SECRET&js_code=JSCODE&grant_type=authorization_code',
-    //               data: {
-    //                 code: res.code
-    //               }
-    //             })
-    //           } else {
-    //             console.log('登录失败！' + res.errMsg)
-    //           }
-    //         }
-    //       })
-    // },
+    getStorage:function(e) {
+        var nickName = wx.getStorageSync('nickName')
+        var avatarUrl = wx.getStorageSync('avatarUrl')
+        this.setData({
+            loginIs:true,
+            nickName:nickName,
+            avatarUrl:avatarUrl
+        })
+        
+        // try {
+        //     var value = wx.getStorageSync('nickName')
+        //     if (value) {
+        //       this.setData({
+        //         userInfo:value
+        //       })
+        //     }
+        //   } catch (e) {
+        //     // Do something when catch error
+        //   }
+    },
     userLogin: function (e) {
         if (e.detail.userInfo) {
             db.collection('users').add({
@@ -91,17 +95,21 @@ Page({
                 })
                 .then(res => {
                     db.collection('users').where({
-                        _openid:'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
-                      }).get({
-                        success: function(res) {
-                        // 输出 [{ "title": "The Catcher in the Rye", ... }]
-                        console.log(res)
-                       }
-                      })
+                        _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
+                    }).get({
+                        success: function (res) {
+                            // console.log(res)
+                            wx.setStorageSync('nickName', res.data[0].nickName); 
+                            //将获取信息写入本地缓存 
+                            wx.setStorageSync('openid', res.data[0]._openid);
+                            wx.setStorageSync('avatarUrl', res.data[0].avatarUrl);
+                        }
+                    })
                 })
             this.setData({
                 loginIs: true,
-                userInfo: e.detail.userInfo
+                nickName: e.detail.userInfo.nickName,
+                avatarUrl: e.detail.userInfo.avatarUrl
             })
             app.userInfo = e.detail.userInfo
         }

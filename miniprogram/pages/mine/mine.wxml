@@ -3,8 +3,8 @@
 	<view wx:if="{{loginIs}}" class="login-info">
 		<!-- <open-data type="userAvatarUrl"></open-data>
 		<open-data type="userNickName"></open-data> -->
-		<image src="{{userInfo.avatarUrl}}"></image>
-		<text>{{userInfo.nickName}}</text>
+		<image src="{{avatarUrl}}"></image>
+		<text>{{nickName}}</text>
 	</view>
 	<view  wx:else class="login">
 		<van-button type="primary" size="large" open-type="getUserInfo" bind:getuserinfo="userLogin">授权登录</van-button>
