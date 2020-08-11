@@ -37,3 +37,32 @@
 .mine-container .item-info {
    margin-top: 20rpx;
 }
+
+.mine-container .login {
+   margin: 30rpx;
+   border-radius: 10rpx;
+   overflow: hidden;
+}
+
+.mine-container .login-info {
+   display: flex;
+   flex-direction: row;
+  align-items: center;
+   width: 92%;
+   height: 130rpx;
+   background-color: #07C160;
+   margin: 30rpx;
+   border-radius: 10rpx;
+   overflow: hidden;
+}
+
+.mine-container .login-info image {
+   width: 100rpx;
+   height: 100rpx;
+   border-radius: 50%;
+   overflow: hidden;
+}
+
+.mine-container .login-info text {
+   color: #fff;
+}
