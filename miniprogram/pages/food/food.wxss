@@ -12,6 +12,18 @@
    width: 80%;
 }
 
+.food-container .add-food .food-mian{
+   padding: 0rpx;
+   padding-right: 20rpx;
+   margin-left: 20rpx;
+   
+}
+
+.food-container .add-food .add-food-title {
+   margin: 30rpx;
+   padding-left: 20rpx;
+}
+
 .food-container .add-food .food-price{
    color: #F77A1F;
 }
@@ -25,5 +37,18 @@
    font-size: 30rpx;
    font-weight: bold;
 }
+
+.food-container .add-food .alert-menu {
+   width: 90%;
+   height: 90%;
+   border-radius: 10rpx;
+}
+
+.food-container .add-food .alert-menu image{
+   width: 100%;
+   height: 300rpx;
+}
+
+
 
 

@@ -9,8 +9,9 @@ Page({
         activeKey: 0,
         mainActiveIndex: 0,
         activeId: null,
-        imageURL:'/pages/images/milktea.png',
-        sidebarItem:['鲜果茶缘','醇香奶茶','原沏茗作','现磨咖啡','牛奶手作茶','活力益菌多','益小料']
+        imageURL: '/pages/images/milktea.png',
+        sidebarItem: ['搜索', '鲜果茶缘', '醇香奶茶', '原沏茗作', '现磨咖啡', '牛奶手作茶', '活力益菌多', '益小料'],
+        show: false
     },
 
     /**
@@ -21,6 +22,18 @@ Page({
     },
     onChange(event) {
         console.log(event)
+    },
+    onShowFood() {
+        console.log(1111)
+        this.setData({
+            show: true
+        });
+    },
+
+    onClose() {
+        this.setData({
+            show: false
+        });
     },
 
     /**
