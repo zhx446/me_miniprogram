@@ -9,11 +9,10 @@ cloud.init({
 
 // 云函数入口函数
 exports.main = async (event, context) => {
+  var _openid = event._openid
     try {
-      return await db.collection('users').where({
-        _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
-      }).remove()
+      return await db.collection('users').where(_openid).remove()
     } catch(e) {
-      console.error(e)
+      console.log(e)
     }
   }

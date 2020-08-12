@@ -2,7 +2,6 @@
 const app = getApp();
 // 获取数据库引用
 const db = wx.cloud.database()
-
 Page({
 
     /**
@@ -60,43 +59,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        wx.cloud.callFunction({
-            name: 'delusers',
-            data: {
-                _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
-            }
-        }).then(res => {
-            db.collection('users').where({
-                data: {
-                    _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
-                }
-            }).remove({
-                success: function(res) {
-                  console.log('删除成功')
-                }
-              })
-            // db.collection('users').where({
-            //         _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o',
-            //     })
-            //     .get().then(getRes => {
-            //         if (getRes.data.length > 0) {
-            //             this.setData({
-            //                 loginIs: true,
-            //                 userInfo: getRes.data[0]
-            //             })
-            //         } else {
-
-            //         }
-            //         wx.hideLoading({
-            //             success(res) {
-            //                 that.setData({
-            //                     disabledLogin: true
-            //                 })
-            //             }
-            //         })
-            //         app.userInfo = getRes.data[0]
-            //     })
-        })
         // this.getStorage()
     },
     // getStorage:function(e) {
@@ -114,32 +76,53 @@ Page({
     userLogin: function (e) {
         if (e.detail.userInfo) {
             db.collection('users').add({
-                // data 字段表示需新增的 JSON 数据
-                data: {
-                    nickName: e.detail.userInfo.nickName,
-                    avatarUrl: e.detail.userInfo.avatarUrl,
-                    phoneNumber: '',
-                    realName: '',
-                    time: new Date()
-                }
-            })
-            .then(res => {
-                db.collection('users').where({
-                    _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
-                }).get({
-                    success: function (res) {
-                        // console.log(res)
-                        // wx.setStorageSync('nickName', res.data[0].nickName); 
-                        // //将获取信息写入本地缓存 
-                        // wx.setStorageSync('openid', res.data[0]._openid);
-                        // wx.setStorageSync('avatarUrl', res.data[0].avatarUrl);
+                    // data 字段表示需新增的 JSON 数据
+                    data: {
+                        nickName: e.detail.userInfo.nickName,
+                        avatarUrl: e.detail.userInfo.avatarUrl,
+                        phoneNumber: '',
+                        realName: '',
+                        time: new Date()
                     }
                 })
-            })
-            
+                .then(res => {
+                    db.collection('users').where({
+                        _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
+                    }).get({
+                        success: function (res) {
+                            // console.log(res)
+                            // wx.setStorageSync('nickName', res.data[0].nickName); 
+                            // //将获取信息写入本地缓存 
+                            // wx.setStorageSync('openid', res.data[0]._openid);
+                            // wx.setStorageSync('avatarUrl', res.data[0].avatarUrl);
+                        }
+                    })
+                })
+
         }
     },
-
+    // del:function(e){
+    //     wx.cloud.callFunction({
+    //         name: 'delusers',
+    //         data: {
+    //             _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
+    //         }
+    //     }).then(res => {
+    //         // console.log('删除成功')
+    //         // db.collection('users').where({
+    //         //     _openid: res.result._openid
+    //         // }).remove().then(res =>{
+    //         //     console.log('删除成功')
+    //         // })
+    //         db.collection('users').where({
+    //             _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
+    //         }).remove({
+    //             success: function(res) {
+    //               console.log('删除成功')
+    //             }
+    //           })
+    //     })
+    // },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
