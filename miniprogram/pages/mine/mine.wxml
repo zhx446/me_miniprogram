@@ -1,13 +1,11 @@
 <!--pages/mine/mine.wxml-->
 <view class="mine-container">
 	<view wx:if="{{loginIs}}" class="login-info">
-		<!-- <open-data type="userAvatarUrl"></open-data>
-		<open-data type="userNickName"></open-data> -->
-		<image src="{{avatarUrl}}"></image>
-		<text>{{nickName}}</text>
+		<image src="{{userInfo.avatarUrl}}"></image>
+		<text>{{userInfo.nickName}}</text>
 	</view>
 	<view  wx:else class="login">
-		<van-button type="primary" size="large" open-type="getUserInfo" bind:getuserinfo="userLogin">授权登录</van-button>
+		<van-button disabled="{{disabledLogin}}" type="primary" size="large" open-type="getUserInfo" bind:getuserinfo="userLogin">授权登录</van-button>
 	</view>
 	<view class="mine-info">
 		<block wx:for="{{info}}">
