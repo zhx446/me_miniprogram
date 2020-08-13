@@ -59,70 +59,65 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        // this.getStorage()
+        this.del()
     },
-    // getStorage:function(e) {
-    //     var nickName = wx.getStorageSync('nickName')
-    //     var avatarUrl = wx.getStorageSync('avatarUrl')
-    //     if(nickName) {
-    //         this.setData({
-    //             loginIs:true,
-    //             nickName:nickName,
-    //             avatarUrl:avatarUrl
-    //         })
-    //     }
-
-    // },
     userLogin: function (e) {
         if (e.detail.userInfo) {
             db.collection('users').add({
-                    // data 字段表示需新增的 JSON 数据
-                    data: {
-                        nickName: e.detail.userInfo.nickName,
-                        avatarUrl: e.detail.userInfo.avatarUrl,
-                        phoneNumber: '',
-                        realName: '',
-                        time: new Date()
-                    }
-                })
-                .then(res => {
-                    db.collection('users').where({
-                        _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
-                    }).get({
-                        success: function (res) {
-                            // console.log(res)
-                            // wx.setStorageSync('nickName', res.data[0].nickName); 
-                            // //将获取信息写入本地缓存 
-                            // wx.setStorageSync('openid', res.data[0]._openid);
-                            // wx.setStorageSync('avatarUrl', res.data[0].avatarUrl);
-                        }
-                    })
-                })
-
+                // data 字段表示需新增的 JSON 数据
+                data: {
+                    nickName: e.detail.userInfo.nickName,
+                    avatarUrl: e.detail.userInfo.avatarUrl,
+                    phoneNumber: '',
+                    realName: '',
+                    time: new Date()
+                }
+            })
         }
     },
-    // del:function(e){
-    //     wx.cloud.callFunction({
-    //         name: 'delusers',
-    //         data: {
-    //             _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
-    //         }
-    //     }).then(res => {
-    //         // console.log('删除成功')
-    //         // db.collection('users').where({
-    //         //     _openid: res.result._openid
-    //         // }).remove().then(res =>{
-    //         //     console.log('删除成功')
-    //         // })
-    //         db.collection('users').where({
-    //             _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'
-    //         }).remove({
-    //             success: function(res) {
-    //               console.log('删除成功')
-    //             }
-    //           })
-    //     })
-    // },
+    del: function (e) {
+        // auth.getAccessToken({
+        //     url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxe70f7af61715c4c2&secret=f9bc6efbd2cab49af98f5c95889410f4',
+        //     method: 'get',
+        //     header: {
+        //         'content-type': 'application/json' // 默认值
+        //     },
+        //     success(res) {
+        //         console.log(res)
+        //     }
+        // })
+
+
+        // wx.request({
+        //   url: 'https://api.weixin.qq.com/tcb/databasedelete?access_token=ACCESS_TOKEN',
+        //   data: {
+        //     // _openid :app.userInfo._openid
+        //   },
+        //   method:'post',
+        //   header: {
+        //     'content-type': 'json' // 默认值
+        //   },
+        //   success (res) {
+        //     console.log(res.data)
+        //   }
+        // })
+
+        wx.cloud.callFunction({
+            name: 'delusers',
+            data: {
+                _openid: app.userInfo._openid
+            }
+        }).then(res => {
+            console.log('删除成功')
+        })
+
+
+
+
+
+        
+
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
