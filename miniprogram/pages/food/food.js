@@ -1,5 +1,4 @@
 // pages/food/food.js
-
 Page({
 
     /**
@@ -9,12 +8,19 @@ Page({
         activeKey: 0,
         mainActiveIndex: 0,
         activeId: null,
-        imageURL: '/pages/images/milktea.png',
+        imageURL: '../images/milktea.png',
         sidebarItem: ['搜索', '鲜果茶缘', '醇香奶茶', '原沏茗作', '现磨咖啡', '牛奶手作茶', '活力益菌多', '益小料'],
         show: false,
         chooseMian:['常规','加仙草','加布丁','加椰果','加燕麦','加珍珠','加红豆','加蜂蜜冻','加多肉晶球','加西米明珠'],
         chooseSugar:['全糖','7分糖','5分糖','3分糖','不加额外糖'],
-        chooseTem:['冰','少冰']
+        chooseTem:['冰','少冰'],
+        mlikteaList:[
+            {},
+            {},
+            {},
+            {},
+            {}
+        ]
     },
 
     /**
@@ -27,7 +33,7 @@ Page({
         console.log(event)
     },
     onChangeFood(event) {
-        console.log(event.detail);
+        // console.log(event.detail);
       },
     onShowFood() {
         console.log(1111)

@@ -59,7 +59,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        // this.del()
+        this.del()
     },
     userLogin: function (e) {
         if (e.detail.userInfo) {
@@ -102,14 +102,14 @@ Page({
         //   }
         // })
 
-        // wx.cloud.callFunction({
-        //     name: 'delusers',
-        //     data: {
-        //         _openid: app.userInfo._openid
-        //     }
-        // }).then(res => {
-        //     console.log('删除成功')
-        // })
+        wx.cloud.callFunction({
+            name: 'delusers',
+            data: {
+                _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'//app.userInfo._openid
+            }
+        }).then(res => {
+            console.log('删除成功')
+        })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
