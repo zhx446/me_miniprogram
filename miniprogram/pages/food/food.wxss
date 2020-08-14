@@ -49,6 +49,39 @@
    height: 300rpx;
 }
 
+.food-container .add-food .choose-mian,.choose-sugar,.choose-tem {
+   width: 180rpx;
+   padding: 15rpx 0rpx;
+   margin-left: 20rpx;
+   margin-top: 20rpx;
+   border: 2rpx solid #E7E7E7;
+   background-color: #F8F8F8;
+   border-radius: 10rpx;
+   text-align: center;
+}
+
+.food-container .add-food .choose-mian:hover,.choose-sugar:hover,.choose-tem:hover {
+   background-color: #148B2D;
+   color: #fff;
+}
+
+.food-container .add-food .popup {
+   display: flex;
+   flex-direction: column;
+   align-items: baseline;
+}
+
+.food-container .add-food .choose-ul {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+
+/* .food-container .add-food .price-food {
+   width: 100%;
+} */
+
+
 
 
 

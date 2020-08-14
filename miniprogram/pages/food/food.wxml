@@ -14,10 +14,37 @@
 				<van-button bind:click="onShowFood" round size="mini" color="#128B2D">选规格</van-button>
 				<!-- 选规格弹出层 -->
 				<van-popup show="{{show}}" bind:close="onClose" closeable close-icon="close" close-icon-position="top-right" custom-class="alert-menu">
-					<image src="/pages/images/banner.jpg"></image>
-					<view class="milktea-title">益颗柠檬茶</view>
-					<view class="choose-title">规格</view>
-					
+					<view class="popup">
+						<image src="/pages/images/banner.jpg"></image>
+						<view class="milktea-title">益颗柠檬茶</view>
+						<view class="choose-title">规格</view>
+						<ul class="choose-ul">
+							<block wx:for="{{chooseMian}}">
+								<li class="choose-mian">{{item}}</li>
+							</block>
+						</ul>
+						<view class="choose-title">糖度选择</view>
+						<ul class="choose-ul">
+							<block wx:for="{{chooseSugar}}">
+								<li class="choose-sugar">{{item}}</li>
+							</block>
+						</ul>
+						<view class="choose-title">温度</view>
+						<ul class="choose-ul">
+							<block wx:for="{{chooseTem}}">
+								<li class="choose-tem">{{item}}</li>
+							</block>
+						</ul>
+						<!-- <van-panel style="width:100%" title="￥8.00" desc="已选：常规/全塘/冰" use-footer-slot>
+							<van-button size="large">按钮</van-button>
+							<view slot="status">
+								<van-stepper value="{{ 1 }}" bind:change="onChangeFood" />
+							</view>
+						</van-panel> -->
+						<van-cell-group style="width:100%">
+							<van-cell title="单元格" value="内容" label="描述信息" border="{{ false }}" />
+						</van-cell-group>
+					</view>
 				</van-popup>
 				<!-- 选规格弹出层 -->
 			</view>

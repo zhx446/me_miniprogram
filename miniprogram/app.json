@@ -16,16 +16,24 @@
   "tabBar": {
     "list": [{
       "pagePath": "pages/home/home",
-      "text": "首页"
+      "text": "首页",
+      "iconPath":"../miniprogram/pages/images/frist.png",
+      "selectedIconPath":"../miniprogram/pages/images/frist-green.png"
     }, {
       "pagePath": "pages/food/food",
-      "text": "点餐"
+      "text": "点餐",
+      "iconPath":"../miniprogram/pages/images/tabar-milktea.png",
+      "selectedIconPath":"../miniprogram/pages/images/tabbar-milk.png"
     }, {
       "pagePath": "pages/takefood/takefood",
-      "text": "取餐"
+      "text": "取餐",
+      "iconPath":"../miniprogram/pages/images/food.png",
+      "selectedIconPath":"../miniprogram/pages/images/food-green.png"
     }, {
       "pagePath": "pages/mine/mine",
-      "text": "我的"
+      "text": "我的",
+      "iconPath":"../miniprogram/pages/images/me.png",
+      "selectedIconPath":"../miniprogram/pages/images/me-green.png"
     }]
   },
   "usingComponents": {
