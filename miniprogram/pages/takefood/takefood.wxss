@@ -1,1 +1,7 @@
 /* pages/takefood/takefood.wxss */
+.take-btn {
+    width: 95%;
+    margin: 0 auto;
+    margin-left: 20rpx;
+    border-radius: 10rpx;
+}
