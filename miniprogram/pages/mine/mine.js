@@ -11,7 +11,7 @@ Page({
         loginIs: false,
         info: ['积分', '储值金', '优惠券'],
         userInfo: {},
-        disabledLogin: false,
+        disabledLogin: true,
         cell: [{
                 title: '会员等级',
                 icon: 'gem-o'
@@ -59,7 +59,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.del()
+        // this.del()
     },
     userLogin: function (e) {
         if (e.detail.userInfo) {
@@ -76,40 +76,14 @@ Page({
         }
     },
     del: function (e) {
-        // auth.getAccessToken({
-        //     url: 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxe70f7af61715c4c2&secret=f9bc6efbd2cab49af98f5c95889410f4',
-        //     method: 'get',
-        //     header: {
-        //         'content-type': 'application/json' // 默认值
-        //     },
-        //     success(res) {
-        //         console.log(res)
+        // wx.cloud.callFunction({
+        //     name: 'delusers',
+        //     data: {
+        //         _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'//app.userInfo._openid
         //     }
+        // }).then(res => {
+        //     console.log('删除成功')
         // })
-
-
-        // wx.request({
-        //   url: 'https://api.weixin.qq.com/tcb/databasedelete?access_token=ACCESS_TOKEN',
-        //   data: {
-        //     // _openid :app.userInfo._openid
-        //   },
-        //   method:'post',
-        //   header: {
-        //     'content-type': 'json' // 默认值
-        //   },
-        //   success (res) {
-        //     console.log(res.data)
-        //   }
-        // })
-
-        wx.cloud.callFunction({
-            name: 'delusers',
-            data: {
-                _openid: 'o5Bj84tF2bD54h6SNYVoIa7bHt6o'//app.userInfo._openid
-            }
-        }).then(res => {
-            console.log('删除成功')
-        })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成
