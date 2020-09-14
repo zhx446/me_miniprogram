@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/food/food",
     "pages/takefood/takefood",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/template_popup/template_popup"
     
   ],
   "window": {

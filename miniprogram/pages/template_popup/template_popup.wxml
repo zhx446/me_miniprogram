@@ -1,0 +1,37 @@
+<!--pages/template_popup/template_popup.wxml-->
+<!-- 选规格弹出层 -->
+<template name="foodPopup">
+	<van-popup show="{{show}}" bind:close="onClose" closeable close-icon="close" close-icon-position="top-right" custom-class="alert-menu">
+		<image src="/pages/images/banner.jpg"></image>
+		<view class="popup">
+			<view class="milktea-title">益颗柠檬茶</view>
+			<view class="choose-title">规格</view>
+			<ul class="choose-ul">
+				<block wx:for="{{chooseMian}}">
+					<li class="choose-mian">{{item}}</li>
+				</block>
+			</ul>
+			<view class="choose-title">糖度选择</view>
+			<ul class="choose-ul">
+				<block wx:for="{{chooseSugar}}">
+					<li class="choose-sugar">{{item}}</li>
+				</block>
+			</ul>
+			<view class="choose-title">温度</view>
+			<ul class="choose-ul">
+				<block wx:for="{{chooseTem}}">
+					<li class="choose-tem">{{item}}</li>
+				</block>
+			</ul>
+			<view class="price">
+				<view class="price-mian">
+					<view class="price-num">￥8.00</view>
+					<view class="price-choose">已选：常规/加糖/冰</view>
+				</view>
+				<van-stepper value="{{ 1 }}" bind:change="onChangeFood" />
+			</view>
+			<button class="price-btn">选好了</button>
+		</view>
+	</van-popup>
+</template>
+<!-- 选规格弹出层 -->
